@@ -1,0 +1,14 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+}
+
+model Calculation {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  expression String
+  result     String
+  createdAt  DateTime @default(now())
+}
